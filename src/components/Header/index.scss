@@ -1,0 +1,21 @@
+.header {
+	&__top {
+		height: 30px;
+		background-color: var(--color-black);
+	}
+
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__phone {
+		padding: 10px 0 9px;
+		font-size: 11px;
+		line-height: 1;
+		letter-spacing: -0.06px;
+		text-transform: uppercase;
+		color: var(--color-white);
+	}
+}

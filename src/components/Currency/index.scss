@@ -1,0 +1,61 @@
+.currency {
+	position: relative;
+	display: flex;
+	border-left: solid 1px var(--color-mine-tundora);
+	border-right: solid 1px var(--color-mine-tundora);
+	min-width: 80px;
+	font-size: 11px;
+	line-height: 1;
+	letter-spacing: -0.06px;
+	text-transform: uppercase;
+	color: var(--color-white);
+	user-select: none;
+
+	&.is-open {
+		.currency__dropdown {
+			display: block;
+		}
+	}
+
+	&__value {
+		display: flex;
+		border: none;
+		padding: 9px 15px;
+		width: 100%;
+		color: var(--color-white);
+		background-color: var(--color-black);
+		cursor: pointer;
+	}
+
+	svg {
+		margin-left: 5px;
+		display: block;
+		width: 8px;
+		height: 8px;
+		fill: var(--color-white);
+	}
+
+	&__dropdown {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		display: none;
+		background-color: var(--color-black);
+
+		&__item {
+			display: flex;
+			border: none;
+			border-top: solid 1px var(--color-mine-tundora);
+			padding: 10px 15px 9px;
+			width: 100%;
+			font-size: 11px;
+			line-height: 1;
+			letter-spacing: -0.06px;
+			text-transform: uppercase;
+			color: var(--color-white);
+			background-color: var(--color-black);
+			cursor: pointer;
+		}
+	}
+}
