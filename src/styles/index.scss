@@ -1,0 +1,27 @@
+@import "~normalize.css";
+@import "variables";
+@import "fonts";
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: var(--font-family-arial-mt);
+	font-size: 12px;
+	line-height: 18px;
+	color: var(--color-mine-shaft);
+}
+
+.container {
+	position: relative;
+	margin: 0 auto;
+	max-width: 1010px;
+	padding: 0 20px;
+}
