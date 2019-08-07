@@ -1,0 +1,125 @@
+.slider {
+	position: relative;
+	background-color: var(--color-spring-wood);
+
+	&__slides {
+		position: relative;
+		height: 440px;
+	}
+
+	&__slide {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 0;
+		background-position: 65px 50%;
+		background-repeat: no-repeat;
+		background-color: var(--color-spring-wood);
+		transition: opacity 0.3s ease;
+
+		&.active {
+			opacity: 1;
+			z-index: 2;
+		}
+	}
+
+	&__button {
+		position: absolute;
+		bottom: 84px;
+		left: 179px;
+		display: flex;
+		align-items: center;
+		padding: 19px 23px;
+		min-width: 156px;
+		font-weight: 300;
+		font-family: var(--font-family-helvetica-neue);
+		font-size: 16px;
+		line-height: 16px;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: var(--color-white);
+		background-color: var(--color-hit-pink);
+		box-shadow: 0 3px 0 var(--color-red-damask);
+		transition: background-color 0.3s ease;
+
+		svg {
+			display: block;
+			margin-left: 16px;
+			width: 8px;
+			height: 8px;
+			fill: var(--color-white);
+			transform: rotate(-90deg);
+		}
+
+		&:hover {
+			background-color: darken(#ffa687, 3);
+		}
+	}
+
+	&__arrow {
+		position: absolute;
+		top: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: none;
+		width: 30px;
+		height: 117px;
+		background-color: var(--color-white);
+		transition: background-color 0.3s ease;
+		transform: translateY(-81%);
+		cursor: pointer;
+
+		&:hover {
+			background-color: darken(#fff, 15);
+		}
+
+		svg {
+			display: block;
+			width: 12px;
+			height: 18px;
+		}
+
+		&.prev {
+			left: 20%;
+
+			svg {
+				transform: rotate(180deg);
+			}
+		}
+
+		&.next {
+			right: 20%;
+		}
+	}
+
+	&__dots {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 27px 0;
+		background-color: var(--color-white);
+	}
+
+	&__dot {
+		margin: 0 10px;
+		border: solid 5px var(--color-white);
+		border-radius: 50%;
+		padding: 0;
+		width: 20px;
+		height: 20px;
+		background-color: var(--color-hurricane);
+		transition: opacity 0.3s ease;
+		cursor: pointer;
+
+		&:hover {
+			opacity: 0.8;
+		}
+
+		&.active {
+			background-color: var(--color-hit-pink);
+		}
+	}
+}
