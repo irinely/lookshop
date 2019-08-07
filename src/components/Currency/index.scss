@@ -4,11 +4,7 @@
 	border-left: solid 1px var(--color-mine-tundora);
 	border-right: solid 1px var(--color-mine-tundora);
 	min-width: 80px;
-	font-size: 11px;
-	line-height: 1;
-	letter-spacing: -0.06px;
-	text-transform: uppercase;
-	color: var(--color-white);
+	max-width: 80px;
 	user-select: none;
 
 	&.is-open {
@@ -19,12 +15,24 @@
 
 	&__value {
 		display: flex;
+		align-items: center;
 		border: none;
 		padding: 9px 15px;
 		width: 100%;
+		font-size: 11px;
+		line-height: 1;
+		letter-spacing: -0.06px;
+		text-transform: uppercase;
 		color: var(--color-white);
 		background-color: var(--color-black);
 		cursor: pointer;
+
+		span {
+			overflow: hidden;
+			max-width: 40px;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
 	}
 
 	svg {
@@ -40,6 +48,7 @@
 		top: 100%;
 		left: 0;
 		right: 0;
+		z-index: 2;
 		display: none;
 		background-color: var(--color-black);
 
@@ -56,6 +65,22 @@
 			color: var(--color-white);
 			background-color: var(--color-black);
 			cursor: pointer;
+		}
+	}
+
+	@media (max-width: 520px) {
+		flex: 0 1 auto;
+		min-width: 0;
+		width: 70px;
+		max-width: 70px;
+
+		&__value {
+			padding: 9px;
+		}
+
+		svg {
+			width: 5px;
+			height: 5px;
 		}
 	}
 }

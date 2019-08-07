@@ -48,7 +48,9 @@ export default class Currency extends React.Component {
 		return (
 			<div className={'currency' + (this.state.isOpen ? ' is-open' : '')}>
 				<button className="currency__value" type="button" onClick={this.onClickValue}>
-					{this.list[this.state.activeItem].title}
+					<span>
+						{this.list[this.state.activeItem].title}
+					</span>
 					<Triangle/>
 				</button>
 				<div className="currency__dropdown">
