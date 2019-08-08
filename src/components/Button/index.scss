@@ -1,0 +1,52 @@
+.button {
+	display: block;
+	align-items: center;
+	border: none;
+	padding: 9px 10px;
+	min-width: 120px;
+	font-weight: 300;
+	font-family: var(--font-family-helvetica-neue);
+	font-size: 11px;
+	line-height: 1;
+	letter-spacing: 0.7px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: var(--color-white);
+	background-color: var(--color-hit-pink);
+	box-shadow: 0 3px 0 var(--color-red-damask);
+	transition: background-color 0.3s ease;
+	cursor: pointer;
+
+	&:hover {
+		background-color: darken(#ffa687, 5);
+	}
+
+	&.large {
+		padding: 8px 10px 9px;
+		min-width: 157px;
+		font-size: 14px;
+		line-height: 30px;
+	}
+
+	&.small {
+		min-width: auto;
+		padding: 9px 10px;
+	}
+
+	&.plus {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		span {
+			margin-right: 10px;
+		}
+
+		svg {
+			display: block;
+			width: 11px;
+			height: 11px;
+		}
+	}
+}
