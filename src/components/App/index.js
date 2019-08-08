@@ -4,6 +4,7 @@ import './index.css';
 import Header from '../Header';
 import Slider from '../Slider';
 import FindUs from '../FindUs';
+import Banner from '../Banner';
 
 function App() {
 	return (
@@ -12,6 +13,7 @@ function App() {
 				<Header/>
 				<Slider/>
 				<FindUs/>
+				<Banner/>
 			</div>
 		</Router>
 	);

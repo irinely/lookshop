@@ -1,0 +1,41 @@
+.banner {
+	margin: 40px 0;
+
+	&__wrapper {
+		display: flex;
+	}
+
+	&__col-2 {
+		display: flex;
+		flex-wrap: wrap;
+		flex-grow: 1;
+	}
+
+	&__item {
+		flex-grow: 1;
+		display: block;
+		padding: 1px;
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	@media (max-width: 767px) {
+		margin: 20px 0;
+	}
+
+	@media (max-width: 640px) {
+		&__wrapper {
+			display: block;
+		}
+
+		&__col-1,
+		&__col-2 {
+			width: 100% !important;
+		}
+	}
+}

@@ -90,4 +90,14 @@
 			}
 		}
 	}
+
+	@media (max-width: 640px) {
+		&__wrapper {
+			flex-direction: column;
+		}
+
+		&__socials {
+			padding: 14px 0;
+		}
+	}
 }
