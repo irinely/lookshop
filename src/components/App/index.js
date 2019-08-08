@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './index.css';
 import Header from '../Header';
 import Slider from '../Slider';
+import FindUs from '../FindUs';
 
 function App() {
 	return (
@@ -10,6 +11,7 @@ function App() {
 			<div className="App">
 				<Header/>
 				<Slider/>
+				<FindUs/>
 			</div>
 		</Router>
 	);
