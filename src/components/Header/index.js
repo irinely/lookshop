@@ -98,6 +98,11 @@ export default class Header extends React.Component {
 									</li>
 									<li className="header__submenu__item">
 										<a href="/">
+											Shorts
+										</a>
+									</li>
+									<li className="header__submenu__item">
+										<a href="/">
 											Trousers
 										</a>
 									</li>

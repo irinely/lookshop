@@ -5,6 +5,7 @@ import Header from '../Header';
 import Slider from '../Slider';
 import FindUs from '../FindUs';
 import Banner from '../Banner';
+import Tabs from '../Tabs';
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 				<Slider/>
 				<FindUs/>
 				<Banner/>
+				<Tabs/>
 			</div>
 		</Router>
 	);

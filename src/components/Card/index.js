@@ -8,15 +8,15 @@ export default class Card extends React.Component {
 		const {href, image, title, price, sale} = this.props;
 
 		return (
-			<Link to="/" className="card">
+			<Link to={process.env.PUBLIC_URL + href} className="card">
 				<div className="card__image">
-					<img src={'https://placehold.it/220x300'} alt=""/>
+					<img src={process.env.PUBLIC_URL + image} alt={title}/>
 				</div>
 				<div className="card__title">
-					Outfits looks
+					{title}
 				</div>
 				<div className="card__price">
-					$59.95
+					${price}
 				</div>
 				<Button
 					tagName="button"

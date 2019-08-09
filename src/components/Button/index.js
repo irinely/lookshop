@@ -4,7 +4,7 @@ import './index.scss';
 
 export default class Button extends React.Component {
 	render() {
-		const {tagName: TagName = 'button', text, type, href, large, small, plus} = this.props;
+		const {tagName: TagName = 'button', text, type = 'button', href, large, small, plus} = this.props;
 
 		return (
 			<TagName
