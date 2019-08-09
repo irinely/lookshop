@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.scss';
 import Card from '../Card';
+import Brand from '../Brand';
 
 import db from '../../data/db';
 
@@ -11,7 +12,8 @@ export default class Tabs extends React.Component {
 		this.refTabsContent = React.createRef();
 
 		this.state = {
-			offset: 0
+			offset: 0,
+			activeTab: 0
 		};
 	}
 
@@ -21,7 +23,9 @@ export default class Tabs extends React.Component {
 			const {marginRight} = window.getComputedStyle(card);
 			const allCardsWidth = this.refTabsContent.current.scrollWidth;
 			const tabsContentWidth = this.refTabsContent.current.clientWidth;
-			const minOffset = tabsContentWidth - allCardsWidth - parseFloat(marginRight);
+			const minOffset = allCardsWidth > tabsContentWidth
+				? tabsContentWidth - allCardsWidth - parseFloat(marginRight)
+				: 0;
 			const maxOffset = 0;
 			const offset = state.offset + dx;
 
@@ -63,23 +67,22 @@ export default class Tabs extends React.Component {
 
 	render() {
 		const products = db.productId.map(id => db.products[id]);
+		const brands = db.designerIds.map(id => db.designers[id]);
 
 		return (
 			<div className="tabs">
 				<div className="container">
 					<div className="tabs__buttons">
-						<button className="tabs__button active" type="button">
-							What’s hot?
-						</button>
-						<button className="tabs__button" type="button">
-							Designers
-						</button>
-						<button className="tabs__button" type="button">
-							Featured
-						</button>
-						<button className="tabs__button" type="button">
-							Latest
-						</button>
+						{['What’s hot?', 'Designers'].map((text, index) => (
+							<button
+								key={index}
+								className={'tabs__button' + (index === this.state.activeTab ? ' active' : '')}
+								type="button"
+								onClick={() => this.setState({activeTab: index, offset: 0})}
+							>
+								{text}
+							</button>
+						))}
 					</div>
 					<div className="tabs__arrows">
 						<button className="tabs__arrow" type="button" onClick={this.left}>
@@ -95,22 +98,38 @@ export default class Tabs extends React.Component {
 					</div>
 				</div>
 				<div className="tabs__contents">
-					<div
-						className="tabs__content"
-						ref={this.refTabsContent}
-						style={{transform: `translateX(${this.state.offset}px)`}}
-					>
-						{products.map((product) =>
-							<Card
-								key={product.id}
-								href={'/product-' + product.id}
-								image={product.images[0]}
-								title={product.title}
-								price={product.price}
-								sale={product.sales}
-							/>
-						)}
-					</div>
+					{this.state.activeTab === 0 && (
+						<div
+							className="tabs__content active"
+							ref={this.refTabsContent}
+							style={{transform: `translateX(${this.state.offset}px)`}}
+						>
+							{products.map((product) =>
+								<Card
+									key={product.id}
+									href={'/product-' + product.id}
+									image={product.images[0]}
+									title={product.title}
+									price={product.price}
+									sale={product.sales}
+								/>
+							)}
+						</div>
+					)}
+					{this.state.activeTab === 1 && (
+						<div className="tabs__content active"
+							 ref={this.refTabsContent}
+							 style={{transform: `translateX(${this.state.offset}px)`}}
+						>
+							{brands.map((brand) =>
+								<Brand
+									key={brand.id}
+									image={brand.image}
+									name={brand.name}
+								/>
+							)}
+						</div>
+					)}
 				</div>
 			</div>
 		);

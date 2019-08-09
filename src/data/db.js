@@ -460,20 +460,24 @@ export default {
 	designers: {
 		1: {
 			id: 1,
-			name: "Givenchy"
+			name: "Givenchy",
+			image: ["/images/brands/1.png"]
 		},
 		2: {
 			id: 2,
-			name: "Pierre Cardin"
+			name: "Pierre Cardin",
+			image: ["/images/brands/2.jpg"]
 		},
 		3: {
 			id: 3,
-			name: "Christian Lacroix"
+			name: "Christian Lacroix",
+			image: ["/images/brands/3.jpg"]
 		},
 		4: {
 			id: 4,
-			name: "Jean Paul Gaultier"
-		},
+			name: "Jean Paul Gaultier",
+			image: ["/images/brands/4.png"]
+		}
 	},
 	designerIds: [1, 2, 3, 4],
 	genders: {

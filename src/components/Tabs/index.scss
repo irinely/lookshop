@@ -66,8 +66,12 @@
 	}
 
 	&__content {
-		display: flex;
+		display: none;
 		transition: transform 0.3s ease;
+
+		&.active {
+			display: flex;
+		}
 	}
 
 	@media (max-width: 767px) {
