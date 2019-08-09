@@ -110,4 +110,12 @@
 	.button {
 		margin: 8px auto;
 	}
+
+	@media (max-width: 767px) {
+		width: 180px;
+
+		&__image {
+			height: 240px;
+		}
+	}
 }

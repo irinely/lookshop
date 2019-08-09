@@ -69,4 +69,21 @@
 		display: flex;
 		transition: transform 0.3s ease;
 	}
+
+	@media (max-width: 767px) {
+		&__contents {
+			padding: 15px 5px;
+		}
+
+		&__button {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	@media (max-width: 520px) {
+		&__button {
+			padding: 11px 15px 10px;
+		}
+	}
 }
