@@ -1,0 +1,31 @@
+.products-grid {
+	margin: 0 auto;
+	max-width: 1010px;
+	padding: 0 20px;
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: -15px;
+	}
+
+	&.desktop-count-5 {
+		max-width: 1260px;
+	}
+
+	&.desktop-count-4 {
+		max-width: 1010px;
+	}
+
+	&.desktop-count-3 {
+		max-width: 760px;
+	}
+
+	&.desktop-count-2 {
+		max-width: 510px;
+	}
+
+	@media (max-width: 1024px) {
+	}
+}
