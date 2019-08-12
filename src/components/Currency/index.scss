@@ -1,8 +1,8 @@
 .currency {
 	position: relative;
 	display: flex;
-	border-left: solid 1px var(--color-mine-tundora);
-	border-right: solid 1px var(--color-mine-tundora);
+	border-left: solid 1px var(--color-tundora);
+	border-right: solid 1px var(--color-tundora);
 	min-width: 80px;
 	max-width: 80px;
 	user-select: none;
@@ -55,7 +55,7 @@
 		&__item {
 			display: flex;
 			border: none;
-			border-top: solid 1px var(--color-mine-tundora);
+			border-top: solid 1px var(--color-tundora);
 			padding: 10px 15px 9px;
 			width: 100%;
 			font-size: 11px;

@@ -1,0 +1,15 @@
+.about {
+	padding: 30px 0;
+	text-align: center;
+
+	&__title {
+		font-size: 24px;
+		line-height: 23px;
+		letter-spacing: -0.24px;
+		color: var(--color-tundora);
+	}
+
+	p {
+		color: var(--color-dusty-gray);
+	}
+}

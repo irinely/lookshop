@@ -7,6 +7,7 @@ import FindUs from '../FindUs';
 import Banner from '../Banner';
 import Tabs from '../Tabs';
 import Clearance from '../Clearance';
+import About from '../About';
 
 function App() {
 	return (
@@ -18,6 +19,7 @@ function App() {
 				<Banner/>
 				<Tabs/>
 				<Clearance/>
+				<About/>
 			</div>
 		</Router>
 	);
