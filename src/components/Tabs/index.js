@@ -1,4 +1,5 @@
 import React from 'react';
+import {shuffle} from 'lodash';
 import './index.scss';
 import Card from '../Card';
 import Brand from '../Brand';
@@ -15,6 +16,9 @@ export default class Tabs extends React.Component {
 			offset: 0,
 			activeTab: 0
 		};
+
+		this.products = shuffle(db.productId).slice(0, 15).map(id => db.products[id]);
+		this.brands = db.designerIds.map(id => db.designers[id]);
 	}
 
 	setOffset(dx) {
@@ -66,9 +70,6 @@ export default class Tabs extends React.Component {
 	}
 
 	render() {
-		const products = db.productId.map(id => db.products[id]);
-		const brands = db.designerIds.map(id => db.designers[id]);
-
 		return (
 			<div className="tabs">
 				<div className="container">
@@ -104,7 +105,7 @@ export default class Tabs extends React.Component {
 							ref={this.refTabsContent}
 							style={{transform: `translateX(${this.state.offset}px)`}}
 						>
-							{products.map((product) =>
+							{this.products.map((product) =>
 								<Card
 									key={product.id}
 									href={'/product-' + product.id}
@@ -121,7 +122,7 @@ export default class Tabs extends React.Component {
 							 ref={this.refTabsContent}
 							 style={{transform: `translateX(${this.state.offset}px)`}}
 						>
-							{brands.map((brand) =>
+							{this.brands.map((brand) =>
 								<Brand
 									key={brand.id}
 									image={brand.image}
