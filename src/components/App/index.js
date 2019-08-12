@@ -6,6 +6,7 @@ import Slider from '../Slider';
 import FindUs from '../FindUs';
 import Banner from '../Banner';
 import Tabs from '../Tabs';
+import Sale from '../Sale';
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 				<FindUs/>
 				<Banner/>
 				<Tabs/>
+				<Sale/>
 			</div>
 		</Router>
 	);
