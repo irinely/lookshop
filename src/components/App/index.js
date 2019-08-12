@@ -8,6 +8,7 @@ import Banner from '../Banner';
 import Tabs from '../Tabs';
 import Clearance from '../Clearance';
 import About from '../About';
+import Footer from '../Footer';
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 				<Tabs/>
 				<Clearance/>
 				<About/>
+				<Footer/>
 			</div>
 		</Router>
 	);
