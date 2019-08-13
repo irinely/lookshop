@@ -4,6 +4,7 @@ import './index.scss';
 import Header from '../Header';
 import Footer from '../Footer';
 import Home from '../Home';
+import ProductsPage from '../ProductsPage';
 
 function App() {
 	return (
@@ -13,6 +14,7 @@ function App() {
 					<Header/>
 					<Switch>
 						<Route exact path={process.env.PUBLIC_URL + '/'} component={Home}/>
+						<Route path={process.env.PUBLIC_URL + '/products'} component={ProductsPage}/>
 					</Switch>
 				</div>
 				<Footer/>

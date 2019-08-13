@@ -401,7 +401,7 @@ export default {
 			],
 			price: "49.99",
 			sizes: [
-				1, 3, 4
+				8, 9, 10, 11, 12, 14
 			]
 		},
 		20: {
@@ -456,7 +456,7 @@ export default {
 			price: "25.00",
 		},
 	},
-	productId: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],
+	productIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],
 	designers: {
 		1: {
 			id: 1,
@@ -527,13 +527,9 @@ export default {
 		9: {
 			id: 9,
 			title: "Ties"
-		},
-		10: {
-			id: 10,
-			title: "Socks"
-		},
+		}
 	},
-	categoryIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+	categoryIds: [1, 2, 3, 4, 5, 6, 7, 8, 9],
 	sales: {
 		1: {
 			id: 1,
@@ -542,7 +538,7 @@ export default {
 		2: {
 			id: 2,
 			title: "summer sale"
-		},
+		}
 	},
 	saleIds: [1, 2],
 	sizes: {
@@ -566,6 +562,50 @@ export default {
 			id: 5,
 			title: "xl"
 		},
+		6: {
+			id: 6,
+			title: "36"
+		},
+		8: {
+			id: 8,
+			title: "37"
+		},
+		9: {
+			id: 9,
+			title: "38"
+		},
+		10: {
+			id: 10,
+			title: "39"
+		},
+		11: {
+			id: 11,
+			title: "40"
+		},
+		12: {
+			id: 12,
+			title: "41"
+		},
+		13: {
+			id: 13,
+			title: "42"
+		},
+		14: {
+			id: 14,
+			title: "43"
+		},
+		15: {
+			id: 15,
+			title: "44"
+		},
+		16: {
+			id: 16,
+			title: "45"
+		},
+		17: {
+			id: 17,
+			title: "46"
+		},
 	},
-	sizeIds: [1, 2, 3, 4, 5],
+	sizeIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
 }

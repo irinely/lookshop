@@ -3,11 +3,40 @@ import {Link} from 'react-router-dom';
 import './index.scss';
 import Currency from '../Currency';
 
+import db from '../../data/db';
+
 import logo from './images/logo.png';
 import cart from './images/cart.png';
 import triangle from '../../images/triangle.svg';
 
 export default class Header extends React.Component {
+	constructor(props) {
+		super(props);
+
+		this.brands = db.designerIds.map(id => db.designers[id]);
+		this.sales = db.saleIds.map(id => db.sales[id]);
+
+		this.womensCaregories = db.categoryIds
+			.filter(categoryId => (
+				db.productIds.some((productId) => (
+					db.products[productId].genders.includes(1)
+					&&
+					db.products[productId].categories.includes(categoryId)
+				))
+			))
+			.map(id => db.categories[id]);
+
+		this.mensCaregories = db.categoryIds
+			.filter(categoryId => (
+				db.productIds.some((productId) => (
+					db.products[productId].genders.includes(2)
+					&&
+					db.products[productId].categories.includes(categoryId)
+				))
+			))
+			.map(id => db.categories[id]);
+	}
+
 	render() {
 		return (
 			<header className="header">
@@ -53,26 +82,13 @@ export default class Header extends React.Component {
 								</a>
 								<img src={triangle} alt=""/>
 								<ul className="header__submenu">
-									<li className="header__submenu__item">
-										<a href="/">
-											Givenchy
-										</a>
-									</li>
-									<li className="header__submenu__item">
-										<a href="/">
-											Pierre Cardin
-										</a>
-									</li>
-									<li className="header__submenu__item">
-										<a href="/">
-											Christian Lacroix
-										</a>
-									</li>
-									<li className="header__submenu__item">
-										<a href="/">
-											Jean Paul Gaultier
-										</a>
-									</li>
+									{this.brands.map((brand) =>
+										<li className="header__submenu__item" key={brand.id}>
+											<a href="/">
+												{brand.name}
+											</a>
+										</li>
+									)}
 								</ul>
 							</li>
 							<li className="header__menu__item">
@@ -81,41 +97,13 @@ export default class Header extends React.Component {
 								</a>
 								<img src={triangle} alt=""/>
 								<ul className="header__submenu">
-									<li className="header__submenu__item">
-										<a href="/">
-											Dresses
-										</a>
-									</li>
-									<li className="header__submenu__item">
-										<a href="/">
-											Sweaters
-										</a>
-									</li>
-									<li className="header__submenu__item">
-										<a href="/">
-											Skirts
-										</a>
-									</li>
-									<li className="header__submenu__item">
-										<a href="/">
-											Shorts
-										</a>
-									</li>
-									<li className="header__submenu__item">
-										<a href="/">
-											Trousers
-										</a>
-									</li>
-									<li className="header__submenu__item">
-										<a href="/">
-											Shoes
-										</a>
-									</li>
-									<li className="header__submenu__item">
-										<a href="/">
-											Swimwear
-										</a>
-									</li>
+									{this.womensCaregories.map((category) =>
+										<li className="header__submenu__item" key={category.id}>
+											<a href="/">
+												{category.title}
+											</a>
+										</li>
+									)}
 								</ul>
 							</li>
 							<li className="header__menu__item">
@@ -124,31 +112,13 @@ export default class Header extends React.Component {
 								</a>
 								<img src={triangle} alt=""/>
 								<ul className="header__submenu">
-									<li className="header__submenu__item">
-										<a href="/">
-											Jackets
-										</a>
-									</li>
-									<li className="header__submenu__item">
-										<a href="/">
-											Sweaters
-										</a>
-									</li>
-									<li className="header__submenu__item">
-										<a href="/">
-											Ties
-										</a>
-									</li>
-									<li className="header__submenu__item">
-										<a href="/">
-											Trousers
-										</a>
-									</li>
-									<li className="header__submenu__item">
-										<a href="/">
-											Socks
-										</a>
-									</li>
+									{this.mensCaregories.map((category) =>
+										<li className="header__submenu__item" key={category.id}>
+											<a href="/">
+												{category.title}
+											</a>
+										</li>
+									)}
 								</ul>
 							</li>
 							<li className="header__menu__item">
@@ -157,16 +127,13 @@ export default class Header extends React.Component {
 								</a>
 								<img src={triangle} alt=""/>
 								<ul className="header__submenu">
-									<li className="header__submenu__item">
-										<a href="/">
-											-20%
-										</a>
-									</li>
-									<li className="header__submenu__item">
-										<a href="/">
-											Summer Sale!
-										</a>
-									</li>
+									{this.sales.map((sale) =>
+										<li className="header__submenu__item" key={sale.id}>
+											<a href="/">
+												{sale.title}
+											</a>
+										</li>
+									)}
 								</ul>
 							</li>
 						</ul>

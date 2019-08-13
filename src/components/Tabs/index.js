@@ -17,7 +17,7 @@ export default class Tabs extends React.Component {
 			activeTab: 0
 		};
 
-		this.products = shuffle(db.productId).slice(0, 15).map(id => db.products[id]);
+		this.products = shuffle(db.productIds).slice(0, 15).map(id => db.products[id]);
 		this.brands = db.designerIds.map(id => db.designers[id]);
 	}
 

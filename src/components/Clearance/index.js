@@ -8,7 +8,7 @@ export default class Clearance extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.products = db.productId.map(id => db.products[id]);
+		this.products = db.productIds.map(id => db.products[id]);
 	}
 
 	render() {
