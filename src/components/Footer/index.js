@@ -26,11 +26,11 @@ export default class Footer extends React.Component {
 								We accept
 							</div>
 							<div className="footer__top__list">
-								<img className="payment" src={image1}/>
-								<img className="payment" src={image2}/>
-								<img className="payment" src={image3}/>
-								<img className="payment" src={image4}/>
-								<img className="payment" src={image5}/>
+								<img className="payment" src={image1} alt=""/>
+								<img className="payment" src={image2} alt=""/>
+								<img className="payment" src={image3} alt=""/>
+								<img className="payment" src={image4} alt=""/>
+								<img className="payment" src={image5} alt=""/>
 							</div>
 						</div>
 					</div>
