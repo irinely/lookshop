@@ -156,6 +156,8 @@
 
 	@media (max-width: 767px) {
 		&__middle {
+			padding: 28px 0 0;
+
 			&__col {
 				margin-bottom: 20px;
 				width: calc(25% + 10px);
