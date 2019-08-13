@@ -1,9 +1,14 @@
 import React from 'react';
+import Breadcrumbs from '../Breadcrumbs';
 
 export default class ProductsPage extends React.Component {
 	render() {
 		return (
-			<div>123</div>
+			<React.Fragment>
+				<div className="container">
+					<Breadcrumbs/>
+				</div>
+			</React.Fragment>
 		);
 	}
 }
