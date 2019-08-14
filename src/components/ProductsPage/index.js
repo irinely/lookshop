@@ -1,6 +1,7 @@
 import React from 'react';
 import Breadcrumbs from '../Breadcrumbs';
 import ProductPageSlider from '../ProductPageSlider';
+import ProductsFilter from '../ProductsFilter';
 
 export default class ProductsPage extends React.Component {
 	render() {
@@ -10,6 +11,7 @@ export default class ProductsPage extends React.Component {
 					<Breadcrumbs/>
 				</div>
 				<ProductPageSlider/>
+				<ProductsFilter/>
 			</React.Fragment>
 		);
 	}

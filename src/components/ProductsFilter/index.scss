@@ -1,0 +1,35 @@
+.products-filter {
+	&__wrapper {
+		display: flex;
+	}
+
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 15px;
+		border-bottom: solid 1px var(--color-alto);
+		padding: 0 0 17px;
+	}
+
+	&__sort-by {
+		display: flex;
+		align-items: center;
+
+		label {
+			margin-right: 6px;
+		}
+	}
+
+	.products-grid {
+		margin-bottom: 30px;
+		padding: 0;
+	}
+
+	&__col-1 {
+		width: 720px;
+	}
+
+	&__col-2 {
+	}
+}

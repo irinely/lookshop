@@ -1,0 +1,42 @@
+.pagination {
+	display: flex;
+	align-items: center;
+
+	&__info {
+		margin-right: 15px;
+		font-size: 11px;
+		line-height: 1;
+		letter-spacing: -0.11px;
+		color: var(--color-tundora);
+	}
+
+	&__pages {
+		display: flex;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__page {
+		a {
+			margin: 0 2px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 30px;
+			height: 31px;
+			text-decoration: none;
+			color: var(--color-tundora);
+			background-color: var(--color-wild-sand);
+
+			&:hover,
+			&:focus {
+				background-color: var(--color-mercury);
+			}
+
+			&.active {
+				background-color: var(--color-mercury);
+			}
+		}
+	}
+}
