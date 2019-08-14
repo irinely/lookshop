@@ -1,5 +1,6 @@
 import React from 'react';
 import Breadcrumbs from '../Breadcrumbs';
+import ProductPageSlider from '../ProductPageSlider';
 
 export default class ProductsPage extends React.Component {
 	render() {
@@ -8,6 +9,7 @@ export default class ProductsPage extends React.Component {
 				<div className="container">
 					<Breadcrumbs/>
 				</div>
+				<ProductPageSlider/>
 			</React.Fragment>
 		);
 	}
