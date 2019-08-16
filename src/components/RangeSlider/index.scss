@@ -1,0 +1,26 @@
+.range-price {
+	&__label {
+		font-size: 12px;
+		line-height: 1;
+		text-transform: uppercase;
+		letter-spacing: -0.3px;
+		color: var(--color-gray);
+	}
+
+	.input-range {
+		margin: 30px 0;
+
+		&__label {
+			display: none;
+		}
+
+		&__slider {
+			border-color: var(--color-salmon);
+			background-color: var(--color-salmon);
+		}
+
+		&__track--active {
+			background-color: var(--color-salmon);
+		}
+	}
+}
