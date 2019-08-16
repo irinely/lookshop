@@ -4,6 +4,7 @@ import './index.scss';
 import Sorting from '../Sorting';
 import ProductsGrid from '../ProductsGrid';
 import Pagination from '../Pagination';
+import Filter from '../Filter';
 
 import db from '../../data/db';
 
@@ -64,8 +65,13 @@ export default class ProductsFilter extends React.Component {
 									}
 								})}
 							/>
+							<div className="products-filter__bottom">
+								<Pagination/>
+							</div>
 						</div>
-						<div className="products-filter__col-2"></div>
+						<div className="products-filter__col-2">
+							<Filter/>
+						</div>
 					</div>
 				</div>
 			</div>
