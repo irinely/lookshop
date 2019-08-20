@@ -566,45 +566,49 @@ export default {
 			id: 6,
 			title: "36"
 		},
+		7: {
+			id: 7,
+			title: "37"
+		},
 		8: {
 			id: 8,
-			title: "37"
+			title: "38"
 		},
 		9: {
 			id: 9,
-			title: "38"
+			title: "39"
 		},
 		10: {
 			id: 10,
-			title: "39"
+			title: "40"
 		},
 		11: {
 			id: 11,
-			title: "40"
+			title: "41"
 		},
 		12: {
 			id: 12,
-			title: "41"
+			title: "42"
 		},
 		13: {
 			id: 13,
-			title: "42"
+			title: "43"
 		},
 		14: {
 			id: 14,
-			title: "43"
+			title: "44"
 		},
 		15: {
 			id: 15,
-			title: "44"
+			title: "45"
 		},
 		16: {
 			id: 16,
-			title: "45"
+			title: "46"
 		},
 		17: {
 			id: 17,
-			title: "46"
+			title: "47"
 		},
 	},
 	sizeIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],

@@ -1,5 +1,45 @@
 .filter {
+	padding-bottom: 35px;
+
 	&__wrapper {
 		margin-top: 5px;
+	}
+
+	&__sizes {
+		margin: 45px 0 20px;
+
+		&__title {
+			margin-bottom: 13px;
+			font-size: 12px;
+			line-height: 1;
+			text-transform: uppercase;
+			letter-spacing: -0.3px;
+			color: var(--color-scorpion);
+		}
+
+		&__list {
+			margin: -3.5px;
+		}
+
+		.button {
+			display: inline-block;
+			margin: 3.5px;
+			padding: 0 3px;
+			width: 30px;
+			height: 31px;
+			background-color: var(--color-salmon);
+			box-shadow: none;
+		}
+	}
+
+	&__ok {
+		color: var(--color-dove-gray);
+		background-color: var(--color-mercury);
+		box-shadow: 0 3px 0 var(--color-silver);
+
+		&:hover {
+			background-color: var(--color-mercury);
+			opacity: 0.8;
+		}
 	}
 }

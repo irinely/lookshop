@@ -2,6 +2,7 @@ import React from 'react';
 import './index.scss';
 import BlockTitle from '../BlockTitle';
 import FilterList from '../FilterList';
+import RangeSlider from '../RangeSlider';
 
 import db from '../../data/db';
 
@@ -15,6 +16,7 @@ export default class Filter extends React.Component {
 
 		this.brands = db.designerIds.map(id => db.designers[id]);
 		this.sales = db.saleIds.map(id => db.sales[id]);
+		this.sizes = db.sizeIds.map(id => db.sizes[id]);
 
 		this.womensCaregories = db.categoryIds
 			.filter(categoryId => (
@@ -72,6 +74,22 @@ export default class Filter extends React.Component {
 							text: sale.title
 						}))}
 					/>
+					<RangeSlider/>
+					<div className="filter__sizes">
+						<div className="filter__sizes__title">
+							Select your size
+						</div>
+						<div className="filter__sizes__list">
+							{this.sizes.map((size) =>
+								<button className="button small" type="button" key={size.title}>
+									{size.title}
+								</button>
+							)}
+						</div>
+					</div>
+					<button className="button filter__ok" type="button">
+						Filter
+					</button>
 				</div>
 			</div>
 		);
