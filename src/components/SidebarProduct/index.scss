@@ -1,0 +1,46 @@
+.small-product {
+	display: flex;
+	border-bottom: solid 1px var(--color-alto);
+	padding: 9px 0;
+	text-decoration: none;
+	transition: opacity 0.3s ease;
+
+	&__image {
+		margin-right: 9px;
+		width: 70px;
+		height: 101px;
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__data {
+		margin-top: 1px;
+	}
+
+	&__title {
+		margin-bottom: 8px;
+		font-size: 12px;
+		line-height: 1;
+		letter-spacing: -0.3px;
+		text-transform: uppercase;
+		color: var(--color-scorpion);
+	}
+
+	&__price {
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 1;
+		letter-spacing: -0.4px;
+		text-transform: uppercase;
+		color: var(--color-salmon);
+	}
+
+	&:hover {
+		opacity: 0.8;
+	}
+}

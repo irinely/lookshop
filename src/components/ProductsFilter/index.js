@@ -5,6 +5,7 @@ import Sorting from '../Sorting';
 import ProductsGrid from '../ProductsGrid';
 import Pagination from '../Pagination';
 import Filter from '../Filter';
+import OnSale from '../OnSale';
 
 import db from '../../data/db';
 
@@ -71,6 +72,9 @@ export default class ProductsFilter extends React.Component {
 						</div>
 						<div className="products-filter__col-2">
 							<Filter/>
+							<OnSale
+								products={this.products.filter((product) => product.sales).slice(-3).reverse()}
+							/>
 						</div>
 					</div>
 				</div>
