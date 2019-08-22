@@ -1,11 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {shuffle} from 'lodash';
 import './index.scss';
 import Sorting from '../Sorting';
 import ProductsGrid from '../ProductsGrid';
 import Pagination from '../Pagination';
 import Filter from '../Filter';
-import OnSale from '../OnSale';
+import SidebarProducts from '../SidebarProducts';
 
 import db from '../../data/db';
 
@@ -17,6 +18,7 @@ export default class ProductsFilter extends React.Component {
 			sortBy: 'Date'
 		};
 
+		this.shuffleProducts = shuffle(db.productIds).slice(0, 3).map(id => db.products[id]);
 		this.products = db.productIds.map(id => db.products[id]);
 	}
 
@@ -72,8 +74,13 @@ export default class ProductsFilter extends React.Component {
 						</div>
 						<div className="products-filter__col-2">
 							<Filter/>
-							<OnSale
+							<SidebarProducts
+								title="On sale"
 								products={this.products.filter((product) => product.sales).slice(-3).reverse()}
+							/>
+							<SidebarProducts
+								title="Featured products"
+								products={this.shuffleProducts}
 							/>
 						</div>
 					</div>

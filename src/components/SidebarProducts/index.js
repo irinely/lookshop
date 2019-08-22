@@ -3,14 +3,14 @@ import './index.scss';
 import BlockTitle from '../BlockTitle';
 import SidebarProduct from '../SidebarProduct';
 
-export default class OnSale extends React.Component {
+export default class SidebarProducts extends React.Component {
 	render() {
-		const {products} = this.props;
+		const {title, products} = this.props;
 
 		return (
-			<div className="on-sale">
-				<BlockTitle text="On sale"/>
-				<div className="on-sale__list">
+			<div className="sidebar-products">
+				<BlockTitle text={title}/>
+				<div className="sidebar-products__list">
 					{products.map((product, index) =>
 						<SidebarProduct
 							key={product.id}
