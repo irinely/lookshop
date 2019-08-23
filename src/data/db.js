@@ -10,7 +10,7 @@ export default {
 				1
 			],
 			genders: [
-				1, 2
+				1
 			],
 			categories: [
 				4

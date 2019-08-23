@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.scss';
+import FilterListItem from '../FilterListItem';
 
 export default class FilterList extends React.Component {
 	constructor(props) {
@@ -36,9 +37,9 @@ export default class FilterList extends React.Component {
 				</button>
 				<div className="filter-list__item">
 					{this.props.list.map((item, index) => (
-						<button type="button" key={index}>
+						<FilterListItem key={index} active={item.active} onClick={item.onClick}>
 							{item.text}
-						</button>
+						</FilterListItem>
 					))}
 				</div>
 			</div>

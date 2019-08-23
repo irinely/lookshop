@@ -4,13 +4,11 @@ import 'react-input-range/lib/css/index.css';
 import './index.scss';
 
 export default class RangeSlider extends React.Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			value: { min: 0, max: 500 },
-		};
-	}
+	onChange = ({min, max}) => {
+		min = Math.max(0, min);
+		max = Math.min(max, 500);
+		this.props.onChange({min, max});
+	};
 
 	render() {
 		return (
@@ -18,11 +16,11 @@ export default class RangeSlider extends React.Component {
 				<InputRange
 					minValue={0}
 					maxValue={500}
-					value={this.state.value}
-					onChange={value => this.setState({ value })}
+					value={this.props.value}
+					onChange={this.onChange}
 				/>
 				<div className="range-price__label">
-					Price ${this.state.value.min} - ${this.state.value.max}
+					Price ${this.props.value.min} - ${this.props.value.max}
 				</div>
 			</div>
 		);

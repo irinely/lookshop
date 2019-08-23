@@ -3,6 +3,7 @@ import './index.scss';
 import BlockTitle from '../BlockTitle';
 import FilterList from '../FilterList';
 import RangeSlider from '../RangeSlider';
+import FilterSizesItem from '../FilterSizesItem';
 
 import db from '../../data/db';
 
@@ -47,49 +48,107 @@ export default class Filter extends React.Component {
 					<FilterList
 						category="New"
 						list={[
-							{text: 'New'}
+							{
+								text: 'New',
+								active: this.props.filterNew,
+								onClick: () => {
+									this.props.setFilterNew(!this.props.filterNew);
+								}
+							}
 						]}
 					/>
 					<FilterList
 						category="Designers"
 						list={this.brands.map((brand) => ({
-							text: brand.name
+							text: brand.name,
+							active: this.props.filterDesigners.includes(brand.name),
+							onClick: () => {
+								if (this.props.filterDesigners.includes(brand.name)) {
+									this.props.setFilterDesigners(this.props.filterDesigners.filter((designer) => {
+										return designer !== brand.name
+									}));
+								} else {
+									this.props.setFilterDesigners(this.props.filterDesigners.concat(brand.name));
+								}
+							}
 						}))}
 					/>
 					<FilterList
 						category="Women"
 						list={this.womensCaregories.map((category) => ({
-							text: category.title
+							text: category.title,
+							active: this.props.filterWomenCategories.includes(category.title),
+							onClick: () => {
+								if (this.props.filterWomenCategories.includes(category.title)) {
+									this.props.setFilterWomenCategories(this.props.filterWomenCategories.filter((title) => {
+										return title !== category.title
+									}));
+								} else {
+									this.props.setFilterWomenCategories(this.props.filterWomenCategories.concat(category.title));
+								}
+							}
 						}))}
 					/>
 					<FilterList
 						category="Men"
 						list={this.mensCaregories.map((category) => ({
-							text: category.title
+							text: category.title,
+							active: this.props.filterMenCategories.includes(category.title),
+							onClick: () => {
+								if (this.props.filterMenCategories.includes(category.title)) {
+									this.props.setFilterMenCategories(this.props.filterMenCategories.filter((title) => {
+										return title !== category.title
+									}));
+								} else {
+									this.props.setFilterMenCategories(this.props.filterMenCategories.concat(category.title));
+								}
+							}
 						}))}
 					/>
 					<FilterList
 						category="Clearance"
 						list={this.sales.map((sale) => ({
-							text: sale.title
+							text: sale.title,
+							active: this.props.filterClearance.includes(sale.title),
+							onClick: () => {
+								if (this.props.filterClearance.includes(sale.title)) {
+									this.props.setFilterClearance(this.props.filterClearance.filter((title) => {
+										return title !== sale.title
+									}));
+								} else {
+									this.props.setFilterClearance(this.props.filterClearance.concat(sale.title));
+								}
+							}
 						}))}
 					/>
-					<RangeSlider/>
+					<RangeSlider
+						value={this.props.filterPrice}
+						onChange={this.props.setFilterPrice}
+					/>
 					<div className="filter__sizes">
 						<div className="filter__sizes__title">
 							Select your size
 						</div>
 						<div className="filter__sizes__list">
 							{this.sizes.map((size) =>
-								<button className="button small" type="button" key={size.title}>
+								<FilterSizesItem
+									key={size.title}
+									active={this.props.filterSizes.includes(size.title)}
+									onClick={() => {
+										if (this.props.filterSizes.includes(size.title)) {
+											this.props.setFilterSizes(this.props.filterSizes.filter((title) => {
+												return title !== size.title
+											}));
+										} else {
+											this.props.setFilterSizes(this.props.filterSizes.concat(size.title));
+										}
+									}}
+								>
 									{size.title}
-								</button>
+								</FilterSizesItem>
 							)}
 						</div>
 					</div>
-					<button className="button filter__ok" type="button">
-						Filter
-					</button>
 				</div>
 			</div>
 		);
