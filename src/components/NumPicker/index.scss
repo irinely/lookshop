@@ -1,0 +1,23 @@
+.num-picker {
+	display: flex;
+	padding: 3px 0;
+
+	&__value {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 47px;
+		height: 50px;
+		font-size: 14px;
+		line-height: 1;
+		letter-spacing: -0.35px;
+		color: var(--color-white);
+		background-color: var(--color-mona-lisa);
+	}
+
+	.button {
+		width: 47px;
+		min-width: auto;
+		height: 47px;
+	}
+}
