@@ -5,6 +5,7 @@ import Gallery from '../Gallery';
 import SelectSize from '../SelectSize';
 import NumPicker from '../NumPicker';
 import Button from '../Button';
+import Share from '../Share';
 
 import db from '../../data/db';
 
@@ -45,6 +46,7 @@ export default class ProductPage extends React.Component {
 								</div>
 							</div>
 						</div>
+						<Share/>
 					</div>
 				</div>
 			</React.Fragment>
