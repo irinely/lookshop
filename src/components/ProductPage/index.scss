@@ -28,4 +28,13 @@
 		letter-spacing: -0.9px;
 		color: var(--color-salmon);
 	}
+
+	&__buttons {
+		display: flex;
+
+		.large {
+			margin: 3px 0 3px 5px;
+			height: 47px;
+		}
+	}
 }

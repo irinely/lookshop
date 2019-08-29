@@ -3,6 +3,8 @@ import './index.scss';
 import Breadcrumbs from '../Breadcrumbs';
 import Gallery from '../Gallery';
 import SelectSize from '../SelectSize';
+import NumPicker from '../NumPicker';
+import Button from '../Button';
 
 import db from '../../data/db';
 
@@ -33,6 +35,14 @@ export default class ProductPage extends React.Component {
 								<SelectSize
 									productId={id}
 								/>
+								<div className="product-info__buttons">
+									<NumPicker/>
+									<Button
+										text="Add to card"
+										large
+										plus
+									/>
+								</div>
 							</div>
 						</div>
 					</div>
