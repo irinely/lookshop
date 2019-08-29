@@ -31,6 +31,10 @@ export default class SelectSize extends React.Component {
 		const {productId} = this.props;
 		const sizes = db.products[productId].sizes.map((id) => db.sizes[id]);
 
+		if (!sizes.length) {
+			return null;
+		}
+
 		return (
 			<div className={'select-size' + (this.state.isOpen ? ' is-open' : '')}>
 				<button className="select-size__value" type="button" onClick={this.onClickValue}>

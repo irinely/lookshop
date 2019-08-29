@@ -46,7 +46,7 @@ export default class ProductPage extends React.Component {
 								</div>
 							</div>
 						</div>
-						{/**<Share/>**/}
+						<Share/>
 					</div>
 				</div>
 			</React.Fragment>

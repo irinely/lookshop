@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import {shuffle} from 'lodash';
 import './index.scss';
 import Sorting from '../Sorting';

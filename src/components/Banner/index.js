@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './index.scss';
 
 import image1 from './images/action-1.png';
@@ -13,20 +14,20 @@ export default class Banner extends React.Component {
 				<div className="container">
 					<div className="banner__wrapper">
 						<div className="banner__col-1" style={{width: `50%`}}>
-							<a className="banner__item" href="/" style={{width: `100%`}}>
+							<Link to={'/products'} className="banner__item" style={{width: `100%`}}>
 								<img src={image1} alt=""/>
-							</a>
+							</Link>
 						</div>
 						<div className="banner__col-2" style={{width: `50%`}}>
-							<a className="banner__item" href="/" style={{flexBasis: `100%`}}>
+							<Link to={'/products'} className="banner__item" href="/" style={{flexBasis: `100%`}}>
 								<img src={image2} alt=""/>
-							</a>
-							<a className="banner__item" href="/" style={{width: `50%`}}>
+							</Link>
+							<Link to={'/products'} className="banner__item" href="/" style={{width: `50%`}}>
 								<img src={image3} alt=""/>
-							</a>
-							<a className="banner__item" href="/" style={{width: `50%`}}>
+							</Link>
+							<Link to={'/products'} className="banner__item" href="/" style={{width: `50%`}}>
 								<img src={image4} alt=""/>
-							</a>
+							</Link>
 						</div>
 					</div>
 				</div>
