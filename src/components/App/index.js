@@ -5,6 +5,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import Home from '../Home';
 import ProductsPage from '../ProductsPage';
+import ProductPage from '../ProductPage';
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 					<Switch>
 						<Route exact path={process.env.PUBLIC_URL + '/'} component={Home}/>
 						<Route path={process.env.PUBLIC_URL + '/products'} component={ProductsPage}/>
+						<Route path={process.env.PUBLIC_URL + '/product-:id'} component={ProductPage}/>
 					</Switch>
 				</div>
 				<Footer/>
